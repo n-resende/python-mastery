@@ -3,7 +3,7 @@
 def calculate_stock_prices():
     total_price = 0.0
     
-    with open('./Data/portfolio.dat', 'r') as f:
+    with open('../../Data/portfolio.dat', 'r') as f:
         stocks = f.read().split()
         
         for i in range(int(len(stocks)/3)):
