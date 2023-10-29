@@ -1,9 +1,10 @@
 # pcost.py
 
 def calculate_stock_prices():
-    with open('./Data/portfolio.dat', 'r') as f:
+    total_price = 0.0
+    
+    with open('../../Data/portfolio.dat', 'r') as f:
         stocks = f.read().split()
-        total_price = 0.0
         
         for i in range(int(len(stocks)/3)):
             number_of_shares = int(stocks[(i*3)+1])
