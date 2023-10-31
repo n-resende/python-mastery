@@ -88,7 +88,6 @@ if __name__ == '__main__':
     portfolio = read_csv_as_instances('Data/portfolio.csv', Stock)
      
     formatter = tableformat.create_formatter('text')
-    
     tableformat.print_table(portfolio, ['name', 'shares', 'price'], formatter)
     #print(portfolio[0] == portfolio[0])
     
