@@ -5,7 +5,6 @@ import tracemalloc
 from sys import intern
 from collections import abc, defaultdict
 from abc import ABC, abstractmethod
-import stock
 
 class CSVParser(ABC):
     def parse(self, filename):
@@ -70,14 +69,3 @@ def read_csv_as_instances(filename, cls):
     port = parser.parse(filename)
     
     return port
-            
-if __name__ == '__main__':
-    portfolio = read_csv_as_dicts('Data/portfolio.csv', [str, int, float])
-    for s in portfolio:
-        print(s)
-    
-    tracemalloc.start()
-    rows = read_csv_as_instances('Data/portfolio.csv', stock.Stock)
-    print(len(rows))
-    print(rows[0])
-    print(tracemalloc.get_traced_memory())
